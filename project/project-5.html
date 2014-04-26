@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>RNexus</title>
+    
+      <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+      <link rel="stylesheet" href="../css/normalize.css">
+      <link rel="stylesheet" href="../css/foundation.css">
+      <link rel="stylesheet" href="../css/custom.css">
+      <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    
+    
+      <script src="../js/vendor/modernizr.js"></script>
+      <script src="../js/javascript.js"></script>
+      <script type="text/javascript">
+        window.addEventListener("scroll",scrollToSwitchActive);    
+      </script>
+      <style>
+        
+        
+        #bg {
+            background-color: #ebeff0;
+            width: 100%;
+            padding-top: 6em;
+            padding-bottom: 8em;
+            z-index: -1;
+        }
+        
+        #container {
+            box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            min-height: 1000px;
+            overflow: hidden;
+            margin-top: 4em;
+            background-color: white;
+            padding-bottom: 4em;
+        }
+        
+        #banner {
+            background:#333 url(../img/rnexusbanner.jpg) center center no-repeat;
+            height: 31.25em;
+        }
+        
+        
+        .segment{
+            margin-top: 2.5em;
+        }
+        .segment h6{
+            position: relative;
+            top:1em;
+            color: #999;
+        }
+        
+        
+      </style>
+      <script>
+        
+        function nextProject() {
+            var i = document.getElementById("body");
+            var current = i.dataset.myProject;
+            
+            if (current<numberOfProjects) {
+                current++;
+                fadeOutPage(null,"project-"+current);
+            }
+        }
+        function preProject() {
+            var i = document.getElementById("body");
+            var current = i.dataset.myProject;
+            if (current>1) {
+                current--;
+                fadeOutPage(null,"project-"+current);
+            }
+        }
+        
+        function fadeIntoPage() {
+           $("html").css("opacity","0");
+           $("html").animate({opacity: 1}, 700);
+           removeNextIcon();
+        }
+        
+      </script>
+      
+      
+      
+    
+    </head>
+    <body id="body" data-my-project="5"  onload="removeNextIcon()">
+        <div id="bg">
+            <div class="row">
+                <div class="small-3 columns" style="margin-top: 1.3em;">
+                    <a class="myThirdButton"  style="border-radius: 0.4em;" onclick="preProject()"><span>&lt;</span></a>
+                </div>
+                <div class="small-offset-1 small-4 columns"  style="text-align: center;">
+                    <h2 style="color:#2c3c51;">RNexus</h2>
+                </div>
+                <div class="small-offset-1 small-3 columns" style="text-align: right;margin-top: 1.3em;">
+                    <a class="myThirdButton" style="border-radius: 0.4em;" onclick="nextProject()"><span>&gt;</span></a>
+                </div>
+            </div>
+            <div id="container" class="row">
+                <div id="banner">
+                </div>               
+                <div class="row">
+                    
+                    <div class="small-10 small-centered columns">
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="segment">
+                                    <h6>Introduction</h6>
+                                    <hr/>
+                                </div>                        
+                            </div>
+                        </div><!--segment line-->
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;">Project Brief</h3>
+                                <p>
+                                    RNexus(RN: registered nurses) is a collaborative social networking system that puts the patient back into the healthcare process securely based on iOS/ Android platform.
+                                    This application would ideally be utilized for the patient to establish "care relationships" with their healthcare providers while receiving home health or hospice care services.
+                                        
+                                </p>
+                            </div>
+                        </div><!--project brief-->
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;">Function</h3>
+                                <ul class="circle">
+                                    <li>integrating traditional face-to-face interaction with social networking technologies in order to establish a new kind of patient care experience</li>
+                                    <li>facilitating the enhancement of nurse-patient relationships by encouraging patients and their family members to communicate with their care providers</li>
+                                    <li>creating opportunities for patients to engage, learn, ask questions, and always be "in the know" of various aspects of their home care or hospice process</li>
+                                    <li>improving the quality of care by providing patients with an interactive communication platform in addition to a comprehensive care profile that is accessible securely any time or anywhere</li>
+                                    
+                                </ul>
+                            </div>
+                        </div><!--function-->
+    
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;margin-top: 1em;">Technologies</h3>
+                                <p>phonegap, interface design, prototype design, html, css, ajax, jquery mobile, php, mysql</p>
+                            </div>
+                        </div><!--technologies-->
+                        <div class="row">
+                            <div class="small-12 columns small-centered" style="padding-top: 3em;">
+                                <a class="myThirdButton" style="background-color:#e75251" onclick="scrollToPosition('iphone4')"><span>Try this APP</span></a>
+                            </div><!--Get Start Button-->   
+                        </div><!--technologies-->
+                        
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="segment">
+                                    <h6>Detail</h6>
+                                    <hr/>
+                                </div>                        
+                            </div>
+                        </div><!--segment line-->
+                        <div class="row">
+                            <div class="medium-8 small-12 columns">
+                                <h3 style="color: black;margin-top: 1em;">Scenario</h3>
+                                <p>
+                                    When patients leave the hospital but they still need continuous help from the professional workers,
+                                    they will contact with nurse agencies like home health care and hospice agencies to assign some helpers like nurses and physicians.
+                                    After calling to the agencies, the agency will assign a specific nurse to the patient.
+                                    Everytime the assigned nurse helped the patient in home,
+                                    they have to submit all the activities they have done and other updates of the patients medication profile.
+                                </p>
+                                </br>
+                                <p>
+                                    To reduce the workload of the nurses and agencies,
+                                    and to improve the communication for patients,
+                                    an online health social-networking system is needed.
+                                </p>
+                            </div>
+                            <div class="medium-4 columns">
+                                <img class="th hide-for-small-only" src="../img/rnexus-1.jpg"/>
+                            </div>
+                        </div><!--Scenario-->
+                        
+
+                        <div class="row" style="margin-top: 2em;">    
+                                <div class="small-12 columns">
+                                    <h3 style="color: black;margin-top: 1em;">User Study</h3>
+                                    <p>
+                                       The majority of the user group can be divided into three different categories: <strong>Patients</strong>, <strong>Nurses</strong> and <strong>Agency managers</strong>.
+                                    </p>
+                                </div>
+                                <div class="small-12 columns" style="margin-top: 2em;">
+                                    <img src="../img/rnexus-2.jpg"/>
+                                </div>
+                        </div><!--user study-->
+                        <div class="row">
+                            <div class="medium-4 columns panel">
+                                <p><strong>Patients Features</strong></p>
+                                <ul class="circle">
+                                    <li>Patients and designated family members have the option to sign up</li>
+                                    <li>Patients can track their assigned nurse</li>
+                                    <li>Patient will be able to instantly send medical records to another facility</li>
+                                    <li>Patient can confirm upcoming appointment</li>
+                                    <li>......</li>    
+                                </ul>
+                            </div>
+                            <div class="medium-4 columns panel">
+                                <p><strong>Nurses(RN) Features</strong></p>
+                                <ul class="circle">
+                                    <li>RN's can access current patient profiles once the patient has entered unique code</li>
+                                    <li>RN has access to a variety of templates to expedite the documentation process</li>
+                                    <li>RN's can document and make changes to the patient's care profile at any time</li>
+                                    <li>......</li>    
+                                </ul>
+                            </div>
+                            <div class="medium-4 columns panel">
+                                <p><strong>Agency Features</strong></p>
+                                <ul class="circle">
+                                    <li>Agency manager can stay in constant contact with RN's who are out working</li>
+                                    <li>Agency Managers are able to track RN's who are out working and record their logs</li>
+                                    <li>Agency Managers are able to monitor RN's activity by viewing posts and changes to a patient's profile</li>
+                                    <li>......</li>    
+                                </ul>
+                            </div>
+                        </div><!--also user study-->
+                        
+                        <div class="row" style="margin-top: 2em;">
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <h3 style="color: black;margin-top: 3em;">Information Architecture and Prototype Design</h3>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 2em;">
+                                <div class="small-12 medium-4 columns">
+                                    <p>
+                                        According to our discussion, we finally decide the information architecture.
+                                        The next step is to design prototype for each category of customers
+                                    </p>
+                                </div>
+                                <div class="small-12 medium-8 columns">
+                                    <ul class="medium-block-grid-2 large-block-grid-4">
+                                        <li><img class="th" src="../img/rnexus-3.jpg"/></li>
+                                        <li><img class="th"  src="../img/rnexus-4.jpg"/></li>
+                                        <li><img class="th"  src="../img/rnexus-5.jpg"/></li>
+                                        <li><img class="th"  src="../img/rnexus-6.jpg"/></li>
+                                    </ul>    
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 2em;">
+                                <div class="small-12 columns">
+                                    <img src="../img/rnexus-7.jpg"/>
+                                    
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="small-12 columns small-centered" style="padding-top: 3em;">
+                                    <a class="myThirdButton" target="view_window" style="background-color:#e75251" href="https://www.fluidui.com/editor/live/preview/p_LnCJ8kdRJLs120ikpOsrxBcOv7b7rmy2.1395105713796"><span>View the Mockup</span></a>
+                                </div><!--Get Start Button-->    
+                            </div>
+                        </div><!--Information Architecture and Prototype Design-->
+                        
+                        
+                        <div class="row"  id="iphone4Panel" style="margin-top: 2em;">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;margin-top: 1em;">Demo</h3>
+                                <p style="color: #e75251">We haven't finished yet! This is just a simple demo with some bug. The final product would be carried out soon.</p>
+                        </div><!--demo-->    
+                    </div><!--wrapper for margin auto-->
+                    <div class="row">
+                        <div class="iphone4" style="position: relative;">
+                            <img src="../img/iphone4.1.png" alt="iphone"/>
+                            <div style="z-index: 2">
+                                <iframe src="RN/index.html" height="480px" width="320px" style="margin-left: 2em;margin-top: 8em;z-index: 1;"></iframe>
+                            </div>    
+                        </div>  
+                    </div><!--iphone simulator-->
+                </div>
+            </div><!--container-->
+        </div>
+        <div class="row" style="margin-top: 1.5em;"> 
+            <div class="small-12 columns" style="padding-top: 3em;text-align: center">
+                <a class="mySecondButton" href="../index.html#portfolioPanel"><span>Home Page</span></a>
+            </div><!--Get Start Button-->         
+        </div>
+
+    
+    
+    
+    
+    
+      <script src="../js/vendor/jquery.js"></script>
+      <script src="../js/foundation.min.js"></script>
+      <script>
+        $(document).foundation();
+      </script>
+    </body>
+</html>
+

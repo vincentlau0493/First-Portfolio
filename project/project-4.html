@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Information Retrieval</title>
+    
+      <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+      <link rel="stylesheet" href="../css/normalize.css">
+      <link rel="stylesheet" href="../css/foundation.css">
+      <link rel="stylesheet" href="../css/custom.css">
+      <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    
+    
+      <script src="../js/vendor/modernizr.js"></script>
+      <script src="../js/javascript.js"></script>
+      <script type="text/javascript">
+        window.addEventListener("scroll",scrollToSwitchActive);    
+      </script>
+      <style>
+        
+        
+        #bg {
+            background-color: #ebeff0;
+            width: 100%;
+            padding-top: 6em;
+            padding-bottom: 8em;
+            z-index: -1;
+        }
+        
+        #container {
+            box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            min-height: 1000px;
+            overflow: hidden;
+            margin-top: 4em;
+            background-color: white;
+            padding-bottom: 4em;
+        }
+        
+        #banner {
+            background:#333 url(../img/twitter-overview.jpg) center center no-repeat;
+            height: 31.25em;
+        }
+        
+        
+        .segment{
+            margin-top: 2.5em;
+        }
+        .segment h6{
+            position: relative;
+            top:1em;
+            color: #999;
+        }
+        
+        
+      </style>
+      <script>
+        
+        function nextProject() {
+            var i = document.getElementById("body");
+            var current = i.dataset.myProject;
+            
+            if (current<numberOfProjects) {
+                current++;
+                fadeOutPage(null,"project-"+current);
+            }
+        }
+        function preProject() {
+            var i = document.getElementById("body");
+            var current = i.dataset.myProject;
+            if (current>1) {
+                current--;
+                fadeOutPage(null,"project-"+current);
+            }
+        }
+        
+        function fadeIntoPage() {
+           $("html").css("opacity","0");
+           $("html").animate({opacity: 1}, 700); 
+        }
+        
+      </script>
+      
+      
+      
+    
+    </head>
+    <body id="body" data-my-project="4">
+        <div id="bg">
+            <div class="row">
+                <div class="small-3 columns" style="margin-top: 1.3em;">
+                    <a class="myThirdButton"  style="border-radius: 0.4em;" onclick="preProject()"><span>&lt;</span></a>
+                </div>
+                <div class="small-offset-1 small-4 columns"  style="text-align: center;">
+                    <h2 style="color:#2c3c51;">Twitter Retrieval</h2>
+                </div>
+                <div class="small-offset-1 small-3 columns" style="text-align: right;margin-top: 1.3em;">
+                    <a class="myThirdButton" style="border-radius: 0.4em;" onclick="nextProject()"><span>&gt;</span></a>
+                </div>
+            </div>
+            <div id="container" class="row">
+                <div id="banner">
+                </div>               
+                <div class="row">
+                    
+                    <div class="small-10 small-centered columns">
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="segment">
+                                    <h6>Introduction</h6>
+                                    <hr/>
+                                </div>                        
+                            </div>
+                        </div><!--segment line-->
+                        <div class="row">
+                                <div class="small-12 columns">
+                                    <h3 style="color: black;">Project Brief</h3>
+                                </div>
+                                <div class="small=12 medium-5 medium-push-7 columns">
+                                    <img class="" src="../img/twitter-1.jpg"/>
+                                </div>
+                                <div class="small-12  medium-7 medium-pull-5 columns">
+                                    <p>
+                                        Getting the big data from Twitter database, we analyze each twitter to prepare for information retrieval.
+                                        What we are going to do is to refine the function of # and @.
+                                        In other words, when users are going to mention(@) someone or discover(#) some topics, 
+                                        our system would recommend more appropriate persons and topics according to the content the user just inputs.
+                                            
+                                    </p>
+                                </div>
+                        </div><!--project brief-->
+                        <div class="row" style="padding-top: 3em;">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;">Concept</h3>
+                                <p>
+                                    People use social media websites in their daily basis.
+                                    They posted different topics for different purposes.
+                                    To enhance the efficiency and effectiveness of @ and # function, we plan to develop an information retrieval system,
+                                    which is able to recommend more relevant information for user.
+                                    For instance, if the user types "Malaysia" before "#",
+                                    the system would automatically generate a series of topics about airline or MH370.
+                                </p>
+                            </div>
+                        </div><!--concept-->
+    
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;margin-top: 1em;">Technologies</h3>
+                                <p>java, jsp, ajax, information retrieval model, regular expression</p>
+                            </div>
+                        </div><!--technologies-->
+                        
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="segment">
+                                    <h6>Detail</h6>
+                                    <hr/>
+                                </div>                        
+                            </div>
+                        </div><!--segment line-->
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;">Outcome</h3>
+                                <p style="color: #e75251">More detailed process are on the way ... </p>
+                            </div>
+                        </div><!--Scenario-->
+                        
+                        
+                    </div><!--wrapper for margin auto-->
+                </div>
+            
+            </div><!--container-->
+            <div class="row" style="margin-top: 1.5em;"> 
+                <div class="small-12 columns" style="padding-top: 3em;text-align: center">
+                    <a class="mySecondButton" href="../index.html#portfolioPanel"><span>Home Page</span></a>
+                </div><!--Get Start Button-->         
+            </div>
+        </div>    
+        
+    
+    
+    
+    
+    
+    
+      <script src="../js/vendor/jquery.js"></script>
+      <script src="../js/foundation.min.js"></script>
+      <script>
+        $(document).foundation();
+      </script>
+    </body>
+</html>
+
+

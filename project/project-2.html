@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Foundation 5</title>
+    
+      <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+      <link rel="stylesheet" href="../css/normalize.css">
+      <link rel="stylesheet" href="../css/foundation.css">
+      <link rel="stylesheet" href="../css/custom.css">
+      <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    
+    
+      <script src="../js/vendor/modernizr.js"></script>
+      <script src="../js/javascript.js"></script>
+      <script type="text/javascript">
+        window.addEventListener("scroll",scrollToSwitchActive);    
+      </script>
+      <style>
+        
+        
+        #bg {
+            background-color: #ebeff0;
+            width: 100%;
+            padding-top: 6em;
+            padding-bottom: 8em;
+        }
+        
+        #container {
+            box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            min-height: 1000px;
+            overflow: hidden;
+            margin-top: 4em;
+            background-color: white;
+            padding-bottom: 4em;
+        }
+        
+        #banner {
+            background:#333 url(../img/colfusionbanner-resize.jpg) center center no-repeat;
+            height: 25em;
+        }
+        
+        
+        .segment{
+            margin-top: 2.5em;
+        }
+        .segment h6{
+            position: relative;
+            top:1em;
+            color: #999;
+        }
+        
+        
+      </style>
+      <script>
+        
+        function nextProject() {
+            var i = document.getElementById("body");
+            var current = i.dataset.myProject;
+            
+            if (current<=3) {
+                current++;
+                fadeOutPage(null,"project-"+current);
+            }
+        }
+        function preProject() {
+            var i = document.getElementById("body");
+            var current = i.dataset.myProject;
+            if (current>1) {
+                current--;
+                fadeOutPage(null,"project-"+current);
+            }
+        }
+        
+        function fadeIntoPage() {
+           $("html").css("opacity","0");
+           $("html").animate({opacity: 1}, 700); 
+        }
+        
+
+        
+      </script>
+      
+      
+      
+    
+    </head>
+    <body id="body" data-my-project="2">
+        <div id="bg">
+            <div class="row">
+                <div class="small-3 columns" style="margin-top: 1.3em;">
+                    <a class="myThirdButton"  style="border-radius: 0.4em;" onclick="preProject()"><span>&lt;</span></a>
+                </div>
+                <div class="small-offset-1 small-4 columns"  style="text-align: center;">
+                    <h2 style="color:#2c3c51;">Col*fusion</h2>
+                </div>
+                <div class="small-offset-1 small-3 columns" style="text-align: right;margin-top: 1.3em;">
+                    <a class="myThirdButton" style="border-radius: 0.4em;" onclick="nextProject()"><span>&gt;</span></a>
+                </div>
+            </div>
+            <div id="container" class="row">
+                <div id="banner">
+                </div>
+                <div class="row">
+                    
+                    
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <div class="segment">
+                                <h6>Introduction</h6>
+                                <hr/>
+                            </div>                        
+                        </div>
+                    </div><!--segment line-->
+                    <div class="row"> 
+                        <div class="small-offset-1 small-10 columns">
+                            <h3 style="color: black;">Project Brief</h3>
+                            <p>
+                                This is a project from Vladimirmy Zadorozhny, my professor of database.
+                                Col*Fusion (Collaborative Data Fusion) is an advanced infrastructure for systematic accumulation, integration and utilization of historical data.
+                                It aims to support large-scale interdisciplinary research, where a comprehensive picture of the subject requires large amounts of historical data from disparate data sources from a variety of disciplines.    
+                            </p>
+                        </div>
+                    </div><!--project brief-->
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <h3 style="color: black;margin-top: 1em;">Technologies</h3>
+                            <p>html, css, javascript, php, mysql, boostrap, knockout.js</p>
+                        </div>
+                    </div><!--technologies-->
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <h3 style="color: black;margin-top: 1em;">Website</h3>
+                            <a href="http://colfusion.exp.sis.pitt.edu/colfusion        "><p>http://colfusion.exp.sis.pitt.edu/colfusion</p></a>
+                        </div>
+                    </div><!--website-->
+                    
+                    
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <div class="segment">
+                                <h6>Detail</h6>
+                                <hr/>
+                            </div>                        
+                        </div>
+                    </div><!--segment line-->
+                    <div class="row">
+                        <div class="medium-offset-1 medium-7 small-offset-1 small-10 columns">
+                            <h3 style="color: black;">Concept</h3>
+                            <p>
+                                I involved into this project to refine the wiki function of this website, which is to make it more editable.
+                                allowing users to modify the data collaboratively, wiki function achieves all the editting process and consequence for users
+                                 aimming to improving the concept of collabration.
+                            </p>
+                        </div>
+                        <div class=" medium-3 small-pull-1 small-10 columns">
+                            <br/>
+                            <img class="th radius" src="../img/colfusion-img-1.jpg"/>
+                        </div>
+                    </div><!--Concept-->
+                    <div class="row">    
+                            <div class="small-offset-1 small-10 columns">
+                                <h3 style="color: black;margin-top: 1em;">My Work</h3>
+                                <p>
+                                    Utilizing some frond-end technologies, such as javascript, ajax and knockout.js, I successfully realized editting and rollback function. 
+                                    The data which has been recorded by mysql can be easily overviewed by regular user and modified by authorized user.
+                                    What's more, function of validation can prevent bad user detroy the data.
+                                    Also, user can roll back the data to certain version. For instance, if a user doesn't like the current description of data,
+                                    he or she is allowed to roll back to previous version after providing his or her reason.
+                                </p>
+                            </div>
+                        
+                            <div class="small-offset-1 medium-5 small-10 columns">
+                                <img class="th radius" src="../img/colfusion-img-2.jpg"/>
+                                <br/>
+                                <br/>
+                            </div>
+                            <div class="medium-5 small-10 small-pull-1 columns">
+                                <img class="th radius" src="../img/colfusion-img-3.jpg"/>
+                                <br/>
+                                <br/>
+                            </div>
+                    </div><!--my work-->
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <h3 style="color: black;margin-top: 1em;">Experience</h3>
+                            <ul class="circle">
+                                <li>familiar with front-end framework</li>
+                                <li>considering form validation and user experience</li>
+                                <li>collaboratively developing project</li>
+                                <li>improving my knowledge of both client side and server side</li>
+                                
+                            </ul>
+                        </div>
+                    </div><!--experience-->
+                    
+                    
+                </div><!--wrapper-->
+
+            </div><!--container-->
+            <div class="row" style="margin-top: 1.5em;"> 
+                <div class="small-12 columns" style="padding-top: 3em;text-align: center">
+                    <a class="mySecondButton" href="../index.html#portfolioPanel"><span>Home Page</span></a>
+                </div><!--Get Start Button-->
+            </div>
+                   
+        </div>        
+    
+    
+    
+    
+    
+    
+      <script src="../js/vendor/jquery.js"></script>
+      <script src="../js/foundation.min.js"></script>
+      <script>
+        $(document).foundation();
+      </script>
+    </body>
+</html>

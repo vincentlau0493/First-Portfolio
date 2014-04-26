@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Mobile Web Apps</title>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquerymobile.js"></script>
+  <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="css/jquerymobile.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.min.css">
+  <script id="panel-init">
+    $(function() {
+      $( "body>[data-role='panel']" ).panel();
+    });
+  </script>
+
+  <style>
+
+
+  </style>
+
+</head>
+<body>
+
+<!--                   login page begins here                      -->
+  <section data-role="page" id="login">
+    <article data-role="content">
+      <h1>RNexus</h1>
+      <form method="get" id="ajaxForm">
+        <label for="username" class="ui-hidden-accessible">User name:</label>
+        <input type="text" name="username" id="username" placeholder="user name">
+
+        <label for="password" class="ui-hidden-accessible">Password:</label>
+        <input type="password" name="password" id="password" placeholder="password">
+
+        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+          <input type="radio" name="role" id="patient" value="patient" checked="checked">
+          <label for="patient">Patient</label>
+          <input type="radio" name="role" id="nurse" value="nurse">
+          <label for="nurse">Nurse</label>
+          <input type="radio" name="role" id="agency" value="Agency">
+          <label for="agency">Agency</label>
+        </fieldset>
+
+<!--
+        <select name="role" data-native-menu="false">
+          <option value="patient">Patient</option>
+          <option value="nurse">Nurse</option>
+          <option value="agency">Agency</option>
+        </select>
+-->
+        <a class="ui-btn" href="#home">TRY IT</a>
+        <a onclick="loginCheck()" style="margin-top:2em" id="submit" class="ui-shadow ui-btn ui-btn-b ui-corner-all ui-btn-icon-right ui-icon-arrow-r">Log in</a>
+      </form>
+      <div id="test"></div>
+
+  </article>
+  </section><!-- login -->  
+
+
+
+<!--                   home page begins here                      -->
+  <section data-role="page" id="home">
+    <div data-role="header" data-theme="b" data-position="fixed">
+        <a href="#leftpanel" class="ui-btn-left ui-btn ui-btn-inline ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+      <h1 id="responseName">My App</h1>
+        <a class="ui-btn-right ui-btn ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-notext ui-icon-edit">Edit
+    </a>
+   </div><!-- header -->
+   <article data-role="content">
+      <h2>My Wall</h2>
+      <ul data-role="listview">
+        <li data-role="list-divider">Wed, 02/01/2013 <span class="ui-li-count">2</span></li>   
+        <li><a href="#moreDetail" data-transition="slide" onclick="loadDetail(this)">   
+          <h2>Doctor</h2>
+          <p><b>To Peter Griffin</b></p>
+          <p>Well, Mr. Griffin, I've looked into physical results.</p>
+          <p>Ah, Mr. Griffin, I'm not quite sure how to say this. Kim Bassinger? Bass singer? Bassinger?</p>
+          <p>But now, onto the cancer</p>
+          <p>You are a Cancer, right? You were born in July? Now onto these test results.</p>
+          <p class="ui-li-aside">Re: Appointment</p></a>
+        </li>
+        <li><a href="#">
+          <h2>Glen Quagmire</h2>
+          <p>Remember me this weekend!</p>
+          <br>
+          <p>- giggity giggity goo</p>
+          <p class="ui-li-aside">Re: Camping</p></a>
+        </li>
+        <li data-role="list-divider">Tue, 01/01/2013 <span class="ui-li-count">2</span></li>   
+        <li><a href="#">   
+          <h2>Louis</h2>
+          <p><b>Happy Girl!</b></p>
+          <p>Thank you so much!!</p>
+          <p class="ui-li-aside">Re: Christmas Gifts</p></a>
+        </li>
+        <li><a href="#">   
+          <h2>Vincent</h2>
+          <p><b>You should take care of yourself</b></p>
+          <p>Thank you so much!!</p>
+          <p class="ui-li-aside">Re: Christmas Gifts</p></a>
+        </li>
+      </ul>
+   </article><!-- content -->
+
+    <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="bullets" class="ui-btn-active">Wall</a></li>
+                    <li><a href="#" data-icon="audio" >Notification</a></li>
+                    <li><a href="#" data-icon="user">Nurse</a></li>
+                    <li><a href="#" data-icon="gear">Setting</a></li>
+                </ul>
+            </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+   <!--left panel-->
+    <div data-role="panel" data-display="push" id="leftpanel">
+      <h1>Menu</h1>
+      <ul data-role="listview" data-count-theme="b">
+          <li data-icon="bullets"><a href="#">Wall</a></li>
+          <li data-icon="info"><a href="#profile" onclick="loadProfile()">Profile</a></li>
+          <li data-icon="audio"><a href="#">Notification <span class="ui-li-count">2</span></a></li>
+          <li data-icon="comment"><a href="#">Message <span class="ui-li-count">1</span></a></li>
+          <li data-icon="user"><a href="#">My Nurse</a></li>
+          <li><a href="#appointment" onclick="loadAppointment()" class="ui-btn ui-btn-icon-left ui-icon-calendar">Appointment</a></li>
+          <li data-icon="gear"><a href="#">Setting</a></li>
+      </ul>
+    </div><!-- left panel -->
+  </section><!-- home -->
+
+  <section data-role="page" id="info">
+   <div data-role="header">
+     header
+   </div><!-- header -->
+   <article data-role="content">
+     <h1>Second</h1>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, dolorum, in aliquam nobis dolorem voluptatibus alias sit. Laudantium amet deserunt veniam voluptatibus non nulla et iusto. Iure rem corporis maiores.</p>
+     <a href="#home">Home</a>
+   </article><!-- content -->
+   <div data-role="footer">
+     footer
+   </div><!-- footer -->
+  </section><!-- home -->
+
+
+
+
+<!--                   profile page begins here                      -->
+  <section data-role="page" id="profile">
+    <div data-role="header" data-theme="b" data-position="fixed">
+        <a href="#leftpanel1" class="ui-btn-left ui-btn ui-btn-inline ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+      <h1 id="responseName">Profile</h1>
+        <a class="ui-btn-right ui-btn ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-notext ui-icon-edit">Edit
+    </a>
+   </div><!-- header -->
+   <article data-role="content">
+    <div>text will be here</div>
+   </article><!-- content -->
+
+   <!--left panel-->
+    <div data-role="panel" data-display="push" id="leftpanel1">
+      <h1>Menu</h1>
+      <ul data-role="listview" data-count-theme="b">
+          <li data-icon="bullets"><a href="#home">Wall</a></li>
+          <li data-icon="info"><a href="#profile">Profile</a></li>
+          <li data-icon="audio"><a href="#">Notification <span class="ui-li-count">2</span></a></li>
+          <li data-icon="comment"><a href="#">Message <span class="ui-li-count">1</span></a></li>
+          <li data-icon="user"><a href="#">My Nurse</a></li>
+          <li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-calendar">Appointment</a></li>
+          <li data-icon="gear"><a href="#">Setting</a></li>
+      </ul>
+    </div><!-- left panel -->
+  </section><!-- profile -->
+
+
+
+
+
+
+<!--                   appointment page begins here                      -->
+  <section data-role="page" id="appointment">
+    <div data-role="header" data-theme="b" data-position="fixed">
+        <a href="#leftpanel1" class="ui-btn-left ui-btn ui-btn-inline ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+      <h1 id="responseName">Appointment</h1>
+        <a class="ui-btn-right ui-btn ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-notext ui-icon-edit">Edit
+    </a>
+   </div><!-- header -->
+  <article data-role="content">
+    <div data-role="collapsibleset" data-theme="a" data-content-theme="a">
+      <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+        <h3>02/01/2014 <span style="float:right;">Completed</span></h3>
+        <p>Specify the open and close icons on the set to apply it to all the collapsibles within.</p>
+      </div>
+      <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+        <h3>01/21/2014 <span style="float:right;">Cancel</span></h3>
+        <p>This collapsible also gets the icon from the set.</p>
+      </div>
+      <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+        <h3>01/11/2014 <span style="float:right;">Pending</span></h3>
+        <p>The icons here are applied to this collapsible specifically, thus overriding the set icons.</p>
+      </div>
+      <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+        <h3>01/09/2014 <span style="float:right;">Completed</span></h3>
+        <p>The icons here are applied to this collapsible specifically, thus overriding the set icons.</p>
+      </div>
+    </div>
+  </article><!-- content -->
+
+     <div data-role="footer" data-position="fixed" data-theme="b">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#makeAppoint" data-transition="slideup" data-icon="plus">Make Appointment</a></li>
+                <li><a href="#" data-icon="minus" >Cancel Appointment</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+   <!--left panel-->
+    <div data-role="panel" data-display="push" id="leftpanel1">
+      <h1>Menu</h1>
+      <ul data-role="listview" data-count-theme="b">
+          <li data-icon="bullets"><a href="#home">Wall</a></li>
+          <li data-icon="info"><a href="#profile">Profile</a></li>
+          <li data-icon="audio"><a href="#">Notification <span class="ui-li-count">2</span></a></li>
+          <li data-icon="comment"><a href="#">Message <span class="ui-li-count">1</span></a></li>
+          <li data-icon="user"><a href="#">My Nurse</a></li>
+          <li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-calendar">Appointment</a></li>
+          <li data-icon="gear"><a href="#">Setting</a></li>
+      </ul>
+    </div><!-- left panel -->
+  </section><!-- appointment -->
+
+
+  <!--                  make appointment page begins here                      -->
+  <section data-role="page" id="makeAppoint">
+    <div data-role="header" data-theme="b" data-position="fixed">
+        <a href="#appointment" data-transition="slidedown" class="ui-btn-left ui-btn ui-btn-inline ui-corner-all">cancel</a>
+      <h1>Add</h1>
+        <a href="#appointment" onclick="javascript:alert(time.value)" data-transition="slidedown" class="ui-btn-right ui-btn ui-btn ui-btn-inline ui-mini ui-corner-all">save</a>
+   </div><!-- header -->
+  <article data-role="content">
+    <div class="ui-field-contain">
+      <label for="request">Request</label>
+      <input type="text" name="textinput-1" id="request" placeholder="" value="">
+    </div>
+    <div class="ui-field-contain">
+      <label for="time">Time</label>
+      <input id="time" type="date" data-role="date" data-inline="true">
+    </div>
+    
+  </article><!-- content -->
+
+  </section><!--make appointment -->
+
+
+
+
+
+
+
+
+
+
+
+<!--                 more detail                   -->
+  <section data-role="page" id="moreDetail">
+    <div data-role="header" data-theme="b" data-position="fixed">
+        <a href="#home"  data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-inline ui-corner-all ui-btn-icon-notext ui-icon-arrow-l">back</a>
+      <h1 id="responseName">Posting</h1>
+   </div><!-- header -->
+   <article data-role="content">
+
+   </article><!-- content -->
+  </section><!-- profile -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

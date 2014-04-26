@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Work Phase</title>
+    
+      <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+      <link rel="stylesheet" href="../css/normalize.css">
+      <link rel="stylesheet" href="../css/foundation.css">
+      <link rel="stylesheet" href="../css/custom.css">
+      <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    
+    
+      <script src="../js/vendor/modernizr.js"></script>
+      <script src="../js/javascript.js"></script>
+      <script type="text/javascript">
+        window.addEventListener("scroll",scrollToSwitchActive);    
+      </script>
+      <style>
+        
+        
+        #bg {
+            background-color: #ebeff0;
+            width: 100%;
+            padding-top: 6em;
+            padding-bottom: 8em;
+        }
+        
+        #container {
+            box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            min-height: 1000px;
+            overflow: hidden;
+            margin-top: 4em;
+            background-color: white;
+            padding-bottom: 4em;
+        }
+        
+        #banner {
+            background:#333 url(../img/workphasebanner.jpg) center center no-repeat;
+            height: 31.25em;
+        }
+        
+        
+        .segment{
+            margin-top: 2.5em;
+        }
+        .segment h6{
+            position: relative;
+            top:1em;
+            color: #999;
+        }
+        
+        
+      </style>
+      <script>
+        
+        function nextProject() {
+            var i = document.getElementById("body");
+            var current = i.dataset.myProject;
+            
+            if (current<numberOfProjects) {
+                current++;
+                fadeOutPage(null,"project-"+current);
+            }
+        }
+        function preProject() {
+            var i = document.getElementById("body");
+            var current = i.dataset.myProject;
+            if (current>1) {
+                current--;
+                fadeOutPage(null,"project-"+current);
+            }
+        }
+        
+        function fadeIntoPage() {
+           $("html").css("opacity","0");
+           $("html").animate({opacity: 1}, 700); 
+        }
+        
+      </script>
+      
+      
+      
+    
+    </head>
+    <body id="body" data-my-project="3">
+        <div id="bg">
+            <div class="row">
+                <div class="small-3 columns" style="margin-top: 1.3em;">
+                    <a class="myThirdButton"  style="border-radius: 0.4em;" onclick="preProject()"><span>&lt;</span></a>
+                </div>
+                <div class="small-offset-1 small-4 columns"  style="text-align: center;">
+                    <h2 style="color:#2c3c51;">Work Phase</h2>
+                </div>
+                <div class="small-offset-1 small-3 columns" style="text-align: right;margin-top: 1.3em;">
+                    <a class="myThirdButton" style="border-radius: 0.4em;" onclick="nextProject()"><span>&gt;</span></a>
+                </div>
+            </div>
+            <div id="container" class="row">
+                <div id="banner">
+                </div>
+                <div class="row">
+                    
+                    <div class="small-10 small-centered columns">
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="segment">
+                                    <h6>Introduction</h6>
+                                    <hr/>
+                                </div>                        
+                            </div>
+                        </div><!--segment line-->
+                        <div class="row"> 
+                            <div class="medium-6 large-7 small-12 columns">
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <h3 style="color: black;">Project Brief</h3>
+                                        <p>
+                                            This is an interface design for application on mobile.
+                                            Work Phase is an application that user can record all their works and efforts when pursuing a goal.
+                                            On each phase, user can score their work and the score would be add to previous score.
+                                            When the percentage of certain objective becomes 100%, it means the objective has been completed and user can focus on other goals.
+                                            
+                                        </p>
+                                    </div>
+                                </div><!--project brief-->
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <h3 style="color: black;">Idea</h3>
+                                        <p>
+                                            The idea occurs to me when I am learning ios development.
+                                            It is such a frustrated stuff that I always fotgot what I have learnt yesterday.
+                                            In this case, I had to waste a lot of time to review previous tutorial.
+                                            Besides, tedious learning everyday lessens my passion to continue more or less.
+                                            Therefore, I want to design an application which can overview what I have done or learnt before,
+                                            as well as urges me to continue my study plan.
+                                        </p>
+                                    </div>
+                                </div><!--idea-->
+                            </div>
+                            <div class="medium-6 large-5 small-12 columns">
+                                <img src="../img/workphase-2.3.jpg"/>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;margin-top: 1em;">Technologies</h3>
+                                <p>photoshop, interface design, prototype design</p>
+                            </div>
+                        </div><!--technologies-->
+                        
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="segment">
+                                    <h6>Detail</h6>
+                                    <hr/>
+                                </div>                        
+                            </div>
+                        </div><!--segment line-->
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;margin-top: 1em;">Overview</h3>
+                                <p>
+                                    Overview is the home page that displays all info of user's objectives.
+                                    The cell for each objective includes date of start and progress of goal.
+                                    Also, user can add a new objective when clicking the last cell.
+                                </p>
+                            </div>
+                        </div><!--overview-->
+                        
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <img src="../img/workphase-3.1.jpg"/>
+                            </div>
+                        </div><!--pic 1-->
+
+                        <div class="row" style="margin-top: 2em;">    
+                                <div class="small-12 medium-6 columns">
+                                    <h3 style="color: black;margin-top: 1em;">Sidebar</h3>
+                                    <p>
+                                        Menu for user is slided from left side. It would be highlighted when clicking.
+                                    </p>
+                                </div>
+                            
+                                <div class="small-12 medium-6 columns">
+                                    <img src="../img/workphase-1.jpg"/>
+                                </div>
+                        </div><!--sidebar-->
+                        
+                        <div class="row" style="margin-top: 2em;">
+                                <div class="small-12 medium-4 medium-push-7 columns">
+                                    <h3 style="color: black;margin-top: 3em;">Add diary</h3>
+                                    <p>
+                                        This function allows user record his or her effort or work by saving photo, date, location and diary.
+                                        Before submitting the work diary, user should select the objective which the diary is for.
+                                        What's more, user should score his effort, which would be added to whole progress.
+                                    </p>
+                                </div>
+                                <div class="small-12 medium-8 medium-pull-5 columns">
+                                    <img src="../img/workphase-4.2.jpg"/>
+                                </div>
+                        </div><!--add diary-->
+                        <div class="row" style="margin-top: 2em;">
+
+                                <div class="small-12 medium-5 columns">
+                                    <h3 style="color: black;margin-top: 3em;">Analytics</h3>
+                                    <p>
+                                        There are two styles to overview user's diaries for each objective.
+                                        It is pretty easy for user to recall and analyze their works and efforts.
+                                    </p>
+                                </div>
+                                <div class="small-12 medium-7 columns">
+                                    <img src="../img/workphase-5.2.jpg"/>
+                                </div>
+
+                        </div><!--add diary-->
+                        
+                        
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h3 style="color: black;margin-top: 1em;">Experience</h3>
+                                <ul class="circle">
+                                    <li>Using photoshop to design interface</li>
+                                    <li>Designing prototype</li>
+                                    <li>Analyzing user experience</li>
+                                    <li>Selection of color and style</li>
+                                    <li>Design of typography</li>
+                                    
+                                </ul>
+                            </div>
+                        </div><!--experience-->
+                        
+                        
+                    </div>
+                </div><!--wrapper for margin auto-->
+            </div><!--container-->
+            <div class="row" style="margin-top: 1.5em;"> 
+                <div class="small-12 columns" style="padding-top: 3em;text-align: center">
+                    <a class="mySecondButton" href="../index.html#portfolioPanel"><span>Home Page</span></a>
+                </div><!--Get Start Button-->         
+            </div>  
+        </div>    
+      
+    
+    
+    
+    
+    
+    
+      <script src="../js/vendor/jquery.js"></script>
+      <script src="../js/foundation.min.js"></script>
+      <script>
+        $(document).foundation();
+      </script>
+    </body>
+</html>
+
